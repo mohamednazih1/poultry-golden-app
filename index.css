@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom styles for mobile dashboard feel across devices */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: #04140b; /* Gorgeous dark forest base */
+  color: #f8fafc;
+}
+
+/* Nature-Inspired Frosted Glassmorphism Panel (From Digital Agriculture image) */
+.glass-panel {
+  background: rgba(11, 37, 22, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 40px 0 rgba(3, 15, 8, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Shimmer Sweep Sparkle Button Animations */
+@keyframes shimmer-sweep {
+  0% {
+    left: -150%;
+  }
+  50% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.btn-sparkle {
+  position: relative;
+  overflow: hidden !important;
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.45);
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-sparkle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 30%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.4) 70%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: shimmer-sweep 3s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.btn-sparkle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.65);
+}
+
+.btn-sparkle-emerald {
+  position: relative;
+  overflow: hidden !important;
+  box-shadow: 0 0 18px rgba(16, 185, 129, 0.45);
+  border: 1px solid rgba(52, 211, 153, 0.6);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-sparkle-emerald::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 30%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.4) 70%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: shimmer-sweep 3.5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.btn-sparkle-emerald:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.65);
+}
+
+/* Tab active change micro-transitions */
+.tab-transition {
+  animation: tabSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tabSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Smooth fade-in and micro-transitions */
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030e07;
+}
+::-webkit-scrollbar-thumb {
+  background: #0d2a17;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #103c21;
+}

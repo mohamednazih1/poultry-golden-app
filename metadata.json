@@ -1,0 +1,6 @@
+{
+  "name": "تطبيق ال5 كيلو",
+  "description": "تطبيق احترافي لعرض معلومات وتتبع تسمين دواجن التسمين من عمر يوم حتى وزن يزيد عن 5 كيلو جرام مع حاسبة ذكية ومستشار ذكاء اصطناعي.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
